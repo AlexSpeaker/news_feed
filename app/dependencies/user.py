@@ -16,7 +16,8 @@ async def get_user(request: Request) -> User:
     :return: User.
     """
     # TODO: Дописать, когда станет понятнее с пользователями. Пока возвращаем фэйкового пользователя.
-    #  Важно: Пользователя возвращаем всегда, даже если это аноним, пример: User(id=None, roles=[anonymous_role])
+    #   Важно: Пользователя возвращаем всегда, даже если это аноним, пример: User(id=None, roles=[anonymous_role])
+    #   Важно: Роли всегда должны быть списком, User(id="00000000-0000-0000-0000-000000000001", roles=[auth_user, news_maker_role])
 
     app: CustomFastApi = request.app
     settings: Settings = app.get_settings()
